@@ -1,0 +1,293 @@
+/*...............
+   Header area  
+................*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+/*.............................
+   common styles or utilities 
+   .............................*/
+body{
+  font-family: 'Roboto', sans-serif;
+}
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #2d25a0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  flex-wrap: wrap;
+}
+.button{
+  color: #fff;
+}
+.button a{
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #e02c6d;
+    color: white;
+    font-size: 16px;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+/*...............
+   Banner area  
+   ...............*/
+
+.banner{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  background-color: #2d25a0;
+  padding: 0 100px;
+  padding-top: 50px;
+}
+.left-banner-area{
+  width: 100%;
+}
+.left-banner-area h1{
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+}
+.right-banner-area{
+  width: 100%;
+}
+.right-banner-area img{
+  width: 100%;
+}
+
+/*......................
+  Player Profile Area  
+ ........................*/
+
+.player-profile{
+  padding: 100px 150px;
+  display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 20px;
+}
+.card{
+  width:300px;
+  height: 425px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(104, 104, 104, 0.5);
+  padding: 20px;
+}
+.card img{
+  width: 100%;
+}
+.card h3{
+  font-size: 28px;
+  font-weight: 700;
+}
+.card p{
+  font-size: 15px;
+  color: grey;
+}
+
+/*.................
+   Highlights Area  
+ ..................*/
+
+.highlights-area{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 50px 100px;
+}
+.left-highlights-area{
+  width: 100%;
+  padding: 0 50px;
+}
+.left-highlights-area h1{
+  font-size: 55px;
+  font-weight: 700;
+}
+.left-highlights-area p{
+  color: gray;
+}
+.right-highlights-area{
+  width: 100%;
+}
+.right-highlights-area img{
+  width: 100%;
+}
+/* extra section */
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.live{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.live a{
+text-decoration: none;
+font-size: large;
+}
+/*...............
+   Footer area  
+   ...............*/
+
+footer{
+  padding: 50px 0;
+}
+.football-logo{
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+.football-logo img{
+  width: 350px;
+}
+.social-icon{
+  display: flex;
+  justify-content: center;
+}
+.social-icon img{
+  width: 50px;
+  padding: 10px;
+}
+footer p{
+  text-align: center;
+  padding: 20px 0;
+  font-weight: 500;
+}
+
+
+/* Media queries */
+
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+  .container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+
+
